@@ -5,7 +5,7 @@
  */
 package id.go.beacukai.SimaudiApi.repository;
 
-import id.go.beacukai.SimaudiApi.model.TdUsulanHeader;
+import id.go.beacukai.SimaudiApi.model.TdSt;
 import java.math.BigDecimal;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Asus
  */
-public interface UsulanHdrRepo extends JpaRepository<TdUsulanHeader, BigDecimal> {
+public interface StRepo extends JpaRepository<TdSt, BigDecimal> {
     
 }

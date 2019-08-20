@@ -3,6 +3,7 @@
   <persistence-unit name="id.go.beacukai_SimaudiApi_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>id.go.beacukai.SimaudiApi.model.TdUsulanHeader</class>
+    <class>id.go.beacukai.SimaudiApi.model.TdSt</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@10.0.4.51:1521:devoltp"/>
       <property name="javax.persistence.jdbc.user" value="simaudi_new"/>
