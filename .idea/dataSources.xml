@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Impala" uuid="872ceb76-e9eb-49c6-9ad1-b358d9306b12">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <remarks>Database Impala</remarks>
+      <jdbc-driver>com.cloudera.impala.jdbc41.Driver</jdbc-driver>
+      <jdbc-url>jdbc:impala://10.161.4.60:21050/audit</jdbc-url>
+    </data-source>
+  </component>
+</project>
