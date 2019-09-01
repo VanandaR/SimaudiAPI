@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "TD_USULAN_HEADER")
 public class TdUsulanHeader implements Serializable {
     @Id
-    private BigDecimal idUsulanHdr;
+    private String idUsulanHdr;
     private String kodeKantorAsal;
     private String kodeKantorTujuan;
     private String nomorDokumen;

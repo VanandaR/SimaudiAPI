@@ -5,6 +5,7 @@
  */
 package id.go.customs.simaudiapi.controller;
 
+import id.go.customs.simaudiapi.mapper.TdUsulanHeaderMapper;
 import id.go.customs.simaudiapi.model.TdUsulanHeader;
 import id.go.customs.simaudiapi.repository.UsulanHdrRepo;
 import java.math.BigDecimal;
@@ -30,6 +31,8 @@ public class UsulanController {
     @Autowired
     UsulanHdrRepo usulanHdrRepo;
 
+    @Autowired
+    TdUsulanHeaderMapper tdUsulanHeaderMapper;
 
     @Cacheable("getTesterKudu")
     @RequestMapping(value = "/testerSimaudi", method = RequestMethod.GET)
@@ -42,8 +45,14 @@ public class UsulanController {
     @CrossOrigin
     @GetMapping(path = "/usulan", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<TdUsulanHeader> getUsulan() throws ParseException {
+
         List<TdUsulanHeader> tdUsulanHeader = usulanHdrRepo.findAll();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        return tdUsulanHeader;
+    }
+
+    @GetMapping(path = "/usulanMyBatis", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<TdUsulanHeader> getUsulanMyBatis() throws ParseException {
+        List<TdUsulanHeader> tdUsulanHeader = tdUsulanHeaderMapper.findAll();
         return tdUsulanHeader;
     }
 
@@ -53,7 +62,7 @@ public class UsulanController {
     }
 
     @DeleteMapping(path = "deleteusulan/{id}")
-    public void deleteUsulan(@PathVariable(value = "id") BigDecimal id) {
+    public void deleteUsulan(@PathVariable(value = "id") String id) {
         usulanHdrRepo.deleteById(id);
     }
 }

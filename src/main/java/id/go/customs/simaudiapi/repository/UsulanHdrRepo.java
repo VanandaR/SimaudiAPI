@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Asus
  */
-public interface UsulanHdrRepo extends JpaRepository<TdUsulanHeader, BigDecimal> {
+public interface UsulanHdrRepo extends JpaRepository<TdUsulanHeader, String> {
     
 }

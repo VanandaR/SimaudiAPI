@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="id.go.customs.simaudiapi.mapper.TdUsulanHeaderMapper">
+  <resultMap id="BaseResultMap" type="id.go.customs.simaudiapi.model.TdUsulanHeader">
+    <result column="id_usulan_hdr" jdbcType="OTHER" property="idUsulanHdr" />
+    <result column="kode_kantor_asal" jdbcType="OTHER" property="kodeKantorAsal" />
+    <result column="kode_kantor_tujuan" jdbcType="OTHER" property="kodeKantorTujuan" />
+    <result column="nomor_dokumen" jdbcType="OTHER" property="nomorDokumen" />
+    <result column="tanggal_dokumen" jdbcType="OTHER" property="tanggalDokumen" />
+    <result column="perihal" jdbcType="OTHER" property="perihal" />
+  </resultMap>
+  <insert id="insert" parameterType="id.go.customs.simaudiapi.model.TdUsulanHeader">
+    insert into td_usulan_header (id_usulan_hdr, kode_kantor_asal, kode_kantor_tujuan, 
+      nomor_dokumen, tanggal_dokumen, perihal
+      )
+    values (#{idUsulanHdr,jdbcType=OTHER}, #{kodeKantorAsal,jdbcType=OTHER}, #{kodeKantorTujuan,jdbcType=OTHER}, 
+      #{nomorDokumen,jdbcType=OTHER}, #{tanggalDokumen,jdbcType=OTHER}, #{perihal,jdbcType=OTHER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="id.go.customs.simaudiapi.model.TdUsulanHeader">
+    insert into td_usulan_header
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idUsulanHdr != null">
+        id_usulan_hdr,
+      </if>
+      <if test="kodeKantorAsal != null">
+        kode_kantor_asal,
+      </if>
+      <if test="kodeKantorTujuan != null">
+        kode_kantor_tujuan,
+      </if>
+      <if test="nomorDokumen != null">
+        nomor_dokumen,
+      </if>
+      <if test="tanggalDokumen != null">
+        tanggal_dokumen,
+      </if>
+      <if test="perihal != null">
+        perihal,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idUsulanHdr != null">
+        #{idUsulanHdr,jdbcType=OTHER},
+      </if>
+      <if test="kodeKantorAsal != null">
+        #{kodeKantorAsal,jdbcType=OTHER},
+      </if>
+      <if test="kodeKantorTujuan != null">
+        #{kodeKantorTujuan,jdbcType=OTHER},
+      </if>
+      <if test="nomorDokumen != null">
+        #{nomorDokumen,jdbcType=OTHER},
+      </if>
+      <if test="tanggalDokumen != null">
+        #{tanggalDokumen,jdbcType=OTHER},
+      </if>
+      <if test="perihal != null">
+        #{perihal,jdbcType=OTHER},
+      </if>
+    </trim>
+  </insert>
+  <select id="findAll" resultMap="BaseResultMap">
+        SELECT * FROM td_usulan_header 
+    </select>
+</mapper>
